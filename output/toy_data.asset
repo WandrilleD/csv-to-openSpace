@@ -1,0 +1,45 @@
+
+-- Scale factor --
+local scale = 50
+
+
+local texture = asset.localResource("point3A.png")
+local color_map_file = asset.localResource("test.cmap")
+
+
+-- Speck files --
+local speck_file = asset.localResource("toy_data.speck.speck")
+
+-- Label files --
+local label_file_cell_line = asset.localResource("toy_data.cell_line.label")
+
+local toy_data = {
+  Identifier = "toy_data",  Renderable = {
+    Type = "RenderableCosmicPoints",
+    Color = { 1, 0.067, 0.161 },
+    Opacity = 1.0,
+    ScaleFactor = scale,
+    File = speck_file,
+    ColorMap = color_map_file,ColorOption = { 'KRT81' , 'MT1E' , 'SAA1' , 'GAGE12D' , 'SEC61G' , 'cell_line_int' },
+ColorRange = { { 0 , 861 } , { 0 , 386 } , { 0 , 398 } , { 0 , 173 } , { 0 , 2024 } , { 0 , 4 }},
+    LabelFile = toy_data.cell_line.label ,
+    Unit = "Km",
+    Texture = texture,
+    BillboardMinMaxSize = { 0.0, 250.0 }, -- in pixels
+    EnablePixelSizeControl = true,
+    Enabled = false
+  },  GUI = {
+    Name = "toy_data",
+    Path = "/toy_data"
+  }
+}
+
+
+  asset.onInitialize(function()
+    openspace.addSceneGraphNode(toy_data)
+    end)
+
+asset.onDeinitialize(function()
+    openspace.removeSceneGraphNode(toy_data)
+end)
+
