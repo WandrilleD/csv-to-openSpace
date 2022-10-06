@@ -8,7 +8,7 @@ local color_map_file = asset.localResource("test.cmap")
 
 
 -- Speck files --
-local speck_file = asset.localResource("toy_data.speck.speck")
+local speck_file = asset.localResource("toy_data.speck")
 
 -- Label files --
 local label_file_cell_line = asset.localResource("toy_data.cell_line.label")
@@ -22,7 +22,7 @@ local toy_data = {
     File = speck_file,
     ColorMap = color_map_file,ColorOption = { 'KRT81' , 'MT1E' , 'SAA1' , 'GAGE12D' , 'SEC61G' , 'cell_line_int' },
 ColorRange = { { 0 , 861 } , { 0 , 386 } , { 0 , 398 } , { 0 , 173 } , { 0 , 2024 } , { 0 , 4 }},
-    LabelFile = toy_data.cell_line.label ,
+    LabelFile = label_file_cell_line ,
     Unit = "Km",
     Texture = texture,
     BillboardMinMaxSize = { 0.0, 250.0 }, -- in pixels
