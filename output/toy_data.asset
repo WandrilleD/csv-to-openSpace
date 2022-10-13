@@ -4,7 +4,7 @@ local scale = 50
 
 
 local texture = asset.localResource("point3A.png")
-local color_map_file = asset.localResource("test.cmap")
+local color_map_file = asset.localResource("toy_data.cmap")
 
 
 -- Speck files --
